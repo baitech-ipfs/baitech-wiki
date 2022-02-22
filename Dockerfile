@@ -7,6 +7,6 @@ RUN yarn install
 FROM node:16-alpine AS builder
 WORKDIR /app
 COPY . .
-RUN yarn install
+RUN yarn install && yarn build
 
 CMD ["yarn", "serve"]
