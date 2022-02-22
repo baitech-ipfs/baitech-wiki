@@ -26,13 +26,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.BAITECH_PAT }}
 
-      - name: Login to private docker registry
-        uses: docker/login-action@v1
-        with:
-          registry: decoo-registry.tencentcloudcr.com
-          username: ${{ secrets.TCR_USER }}
-          password: ${{ secrets.TCR_PASSWD}}
-
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
@@ -40,4 +33,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/decooio/${{ fromJSON(steps.data-map.outputs.DATA_MAP)[github.ref] }}:latest, decoo-registry.tencentcloudcr.com/decooio/${{ fromJSON(steps.data-map.outputs.DATA_MAP)[github.ref] }}:latest
+          tags: ghcr.io/baitech-ipfs/${{ fromJSON(steps.data-map.outputs.DATA_MAP)[github.ref] }}:latest
