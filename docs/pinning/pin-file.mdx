@@ -10,7 +10,7 @@ https://<endpoint-api-host>/pinning/pinFile
 
 例如，“Baitech 上海” 的 *pinFile* API URL 为：
 ```
-https://api-sh.baitech-ipfs.net/pinning/pinFile
+https://api-sh.decoo-cloud.cn/pinning/pinFile
 ```
 
 ## 描述
@@ -75,7 +75,7 @@ API 请求的 Body 应该为 *multipart/form-data* 格式，并包含以下键�
 
 ## Curl 请求示例
 ```sh
-curl -X POST "https://api-sh.baitech-ipfs.net/pinning/pinFile" \
+curl -X POST "https://api-sh.decoo-cloud.cn/pinning/pinFile" \
   -H "UserAccessToken: <YOUR_ACCESS_TOKEN>" \
   -H "Content-Type: multipart/form-data" \
   -F "file=@<YOUR_FILE_PATH>" \

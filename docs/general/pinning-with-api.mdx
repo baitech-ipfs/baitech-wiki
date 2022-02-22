@@ -23,7 +23,7 @@ API Key 是 Baitech 的基础认证机制，用户注册成功后，系统会自
 
 ### 调用 Baitech Storage API
 
-Baitech Storage API 的 Base URL 为：https://api.baitech-ipfs.net
+Baitech Storage API 的 Base URL 为：https://api.decoo-cloud.cn
 
 作为身份认证，您需要在调用 Baitech API 时将您的 API Key 按照以下格式包含在 Header 中：
 ```
@@ -32,7 +32,7 @@ Baitech Storage API 的 Base URL 为：https://api.baitech-ipfs.net
 
 您可以使用 curl 命令测试 API 的连通性及您 Token 的有效性：
 ```bash
-curl -X GET "https://api.baitech-ipfs.net/ping" \
+curl -X GET "https://api.decoo-cloud.cn/ping" \
   -H "Authorization: Bearer <YOUR_API_KEY>" \
   -H "Content-Type: application/json"
 ```
@@ -59,7 +59,7 @@ curl -X GET "https://api.baitech-ipfs.net/ping" \
 
 Client 可以调用 Baitech Storage API 获取 Endpoint 列表：
 ```
-curl -X GET "https://api.baitech-ipfs.net/endpoint/list" \
+curl -X GET "https://api.decoo-cloud.cn/endpoint/list" \
   -H "Authorization: Bearer <YOUR_API_KEY>" \
   -H "Content-Type: application/json"
 ```
@@ -70,7 +70,7 @@ curl -X GET "https://api.baitech-ipfs.net/endpoint/list" \
    {
      "id": 1,
      "name": "上海",
-     "apiHost": "https://api-sh.baitech-ipfs.net"
+     "apiHost": "https://api-sh.decoo-cloud.cn"
    },
    ...
 ]
@@ -88,7 +88,7 @@ curl -X GET "https://api.baitech-ipfs.net/endpoint/list" \
 
 申请 Access Token：
 ```sh
-curl -X GET "https://api.baitech-ipfs.net/oauth/accessToken" \
+curl -X GET "https://api.decoo-cloud.cn/oauth/accessToken" \
   -H "Authorization: Bearer <YOUR_API_KEY>" \
   -H "Content-Type: application/json"
 ```
@@ -160,7 +160,7 @@ public class SecretGeneratorSample {
 
 调用 Endpoint API 时，必须要使用一个有效的 Access Token 进行认证。如果是文件上传相关的 API，还需要附上用户针对文件 CID 生成的数字签名。比如，调用 *pinFile* 的 curl 命令如下：
 ```sh
-curl -X POST "https://api-sh.baitech-ipfs.net/pinning/pinFile" \
+curl -X POST "https://api-sh.decoo-cloud.cn/pinning/pinFile" \
   -H "UserAccessToken: <YOUR_ACCESS_TOKEN>" \
   -H "Content-Type: multipart/form-data" \
   -F "file=@<YOUR_FILE_PATH>" \
